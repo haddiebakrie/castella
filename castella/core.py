@@ -19,7 +19,7 @@ from typing import (
     runtime_checkable,
 )
 
-import numpy as np
+# import numpy as np
 
 from . import color
 
@@ -217,23 +217,23 @@ class Painter(Protocol):
     def measure_net_image(self, url: str, use_cache: bool = True) -> Size:
         ...
 
-    def measure_np_array_as_an_image(self, array: np.ndarray) -> Size:
-        ...
+    # def measure_np_array_as_an_image(self, array: np.ndarray) -> Size:
+    #     ...
 
     def get_net_image_async(self, name: str, url: str, callback):
         ...
 
-    def get_numpy_image_async(self, array: np.ndarray, callback):
-        ...
+    # def get_numpy_image_async(self, array: np.ndarray, callback):
+    #     ...
 
     def draw_image_object(self, img, x: float, y: float) -> None:
         ...
 
-    def draw_np_array_as_an_image(self, array: np.ndarray, x: float, y: float) -> None:
-        ...
+    # def draw_np_array_as_an_image(self, array: np.ndarray, x: float, y: float) -> None:
+    #     ...
 
-    def draw_np_array_as_an_image_rect(self, array: np.ndarray, rect: Rect) -> None:
-        ...
+    # def draw_np_array_as_an_image_rect(self, array: np.ndarray, rect: Rect) -> None:
+    #     ...
 
     def save(self) -> None:
         ...

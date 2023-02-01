@@ -1,4 +1,4 @@
-import numpy as np
+# import numpy as np
 from castella import (
     App,
     Box,
@@ -9,7 +9,7 @@ from castella import (
     Input,
     Kind,
     MultilineText,
-    NumpyImage,
+    # NumpyImage,
     Row,
     State,
     StatefulComponent,
@@ -18,8 +18,8 @@ from castella import (
 )
 from castella.frame import Frame
 
-array = np.zeros((200, 400, 4), dtype=np.uint8)
-array[:, :, 3] = 255
+# array = np.zeros((200, 400, 4), dtype=np.uint8)
+# array[:, :, 3] = 255
 
 
 class Counter(Component):
@@ -69,7 +69,7 @@ App(
             ),
             Row(Switch(True).fixed_width(50), Switch(False)).fixed_height(25),
             Box(Image(TENT_IMG).fixed_size(500, 300)).flex(4),
-            Row(NumList(c), Box(NumpyImage(array).fixed_size(400, 200))),
+            # Row(NumList(c), Box(NumpyImage(array).fixed_size(400, 200))),
             Input("fafa"),
         ).spacing(4)
     ).spacing(8),

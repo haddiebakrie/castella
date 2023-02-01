@@ -3,7 +3,7 @@ import urllib.request
 from functools import cache
 from typing import Optional, cast
 
-import numpy as np
+# import numpy as np
 import skia
 
 from . import core
@@ -183,9 +183,9 @@ class Painter:
             image = _get_net_image(url)
         return core.Size(image.width(), image.height())
 
-    def measure_np_array_as_an_image(self, array: np.ndarray) -> core.Size:
-        height, width, _ = array.shape
-        return core.Size(width, height)
+    # def measure_np_array_as_an_image(self, array: np.ndarray) -> core.Size:
+    #     height, width, _ = array.shape
+    #     return core.Size(width, height)
 
     def get_net_image_async(self, name: str, url: str, callback) -> None:
         raise NotImplementedError()
@@ -193,18 +193,18 @@ class Painter:
     def draw_image_object(self, img, x: float, y: float) -> None:
         self._canvas.drawImage(img, x, y)
 
-    def draw_np_array_as_an_image(self, array: np.ndarray, x: float, y: float) -> None:
-        image = skia.Image.fromarray(array)
-        self.draw_image_object(image, x, y)
+    # def draw_np_array_as_an_image(self, array: np.ndarray, x: float, y: float) -> None:
+    #     image = skia.Image.fromarray(array)
+    #     self.draw_image_object(image, x, y)
 
-    def draw_np_array_as_an_image_rect(
-        self, array: np.ndarray, rect: core.Rect
-    ) -> None:
-        image = skia.Image.fromarray(array)
-        self._canvas.drawImageRect(image, _to_skia_rect(rect))
+    # def draw_np_array_as_an_image_rect(
+    #     self, array: np.ndarray, rect: core.Rect
+    # ) -> None:
+    #     image = skia.Image.fromarray(array)
+    #     self._canvas.drawImageRect(image, _to_skia_rect(rect))
 
-    def get_numpy_image_async(self, array: np.ndarray, callback):
-        raise NotImplementedError()
+    # def get_numpy_image_async(self, array: np.ndarray, callback):
+    #     raise NotImplementedError()
 
     def save(self) -> None:
         self._canvas.save()
