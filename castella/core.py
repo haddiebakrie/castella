@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from asyncio import Future
 from collections.abc import Iterable
 from copy import deepcopy
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, field, replace
 from enum import Enum, IntEnum, auto
 from typing import (
     Any,
@@ -253,7 +253,7 @@ W = TypeVar("W", bound="Widget")
 
 @dataclass(slots=True)
 class MouseEvent(Generic[W]):
-    pos: Point = Point(0, 0)
+    pos: Point = field(default_factory=Point(0,0))
     target: Optional[W] = None
 
     def translate(self, p: Point) -> "MouseEvent":
@@ -1072,6 +1072,7 @@ def _get_theme() -> Theme:
                 text_color=color_schema["text-primary"],
             ),
         },
+
         switch={
             "normal": WidgetStyle(
                 bg_color=color_schema["bg-tertiary"],

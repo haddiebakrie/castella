@@ -16,7 +16,7 @@ class Counter(Component):
         return Column(
             Text(self._count),
             Row(
-                Button("Up", font_size=50).on_click(self.up),
+                Button("Upp", font_size=50).on_click(self.up),
                 Button("Down", font_size=50).on_click(self.down),
             ),
             Button("Init", font_size=50).on_click(self.init),
