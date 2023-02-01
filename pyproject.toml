@@ -18,7 +18,7 @@ documentation = "https://i2y.github.io/castella"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-skia-python = "^87.4"
+skia-python = "87.4"
 darkdetect = "^0.5.1"
 PyOpenGL = { version = "^3.1.5", optional = true }
 PySDL2 = { version = "^0.9.11", optional = true }
