@@ -18,7 +18,7 @@ documentation = "https://i2y.github.io/castella"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-skia-python = "*"
+skia-python = { git = "https://github.com/haddiebakrie/skia-python.git", branch = "main" }
 darkdetect = "^0.5.1"
 PyOpenGL = { version = "^3.1.5", optional = true }
 PySDL2 = { version = "^0.9.11", optional = true }
@@ -27,9 +27,9 @@ glfw = "^2.5.3"
 glcontext = "^2.3.6"
 pysdl2-dll = "^2.0.20"
 
-# [tool.poetry.extras]
-# glfw = ["glfw", "PyOpenGL", "skia-python", "darkdetect"]
-# sdl = ["PySDL2", "pysdl2-dll", "glcontext", "zengl", "skia-python", "darkdetect"]
+[tool.poetry.extras]
+glfw = ["glfw", "PyOpenGL", "skia-python", "darkdetect"]
+sdl = ["PySDL2", "pysdl2-dll", "glcontext", "zengl", "skia-python", "darkdetect"]
 
 [tool.poetry.dev-dependencies]
 mkdocs-material = "^8.2.15"
